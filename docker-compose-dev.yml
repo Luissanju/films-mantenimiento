@@ -1,0 +1,12 @@
+services:
+  mantenimiento_frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: mantenimiento-dev
+    volumes:
+      - ./app:/var/www/html
+      - ./config/dev-virtualhost/mantenimiento.dev.com.conf:/etc/apache2/sites-enabled/mantenimiento.dev.com.conf
+    ports:
+      - "8081:80"
+

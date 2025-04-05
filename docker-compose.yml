@@ -1,0 +1,13 @@
+services:
+  mantenimiento_frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mantenimiento-prod
+    restart: always
+    volumes:
+      - ./app:/var/www/html
+      - ./config/prod-virtualhost/mantenimiento.chickenkiller.com.conf:/etc/apache2/sites-enabled/mantenimiento.chickenkiller.com.conf
+    ports:
+      - "80:80"
+

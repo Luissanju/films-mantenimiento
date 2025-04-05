@@ -1,0 +1,12 @@
+FROM debian:latest
+
+LABEL org.opencontainers.image.authors="luissanjuan.alu@iespacomolla.es"
+
+# Actualiza los repositorios e instala apache2
+RUN apt-get update && apt-get upgrade -y \
+    && apt-get install -y apache2 \
+    && apt-get clean
+
+EXPOSE 80
+
+CMD ["apache2ctl", "-D", "FOREGROUND"]
