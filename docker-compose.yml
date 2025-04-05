@@ -9,5 +9,5 @@ services:
       - ./app:/var/www/html
       - ./config/prod-virtualhost/mantenimiento.chickenkiller.com.conf:/etc/apache2/sites-enabled/mantenimiento.chickenkiller.com.conf
     ports:
-      - "80:80"
+      - "8081:80"
 
